@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Live Lesson Room</title>
+    <style>
+        body { margin: 0; background: #1a1a1a; color: white; font-family: sans-serif; height: 100vh; display: flex; flex-direction: column; }
+        .video-header { padding: 20px; background: #333; display: flex; justify-content: space-between; align-items: center; }
+        .main-stage { flex-grow: 1; display: flex; justify-content: center; align-items: center; position: relative; }
+        .tutor-video { width: 80%; height: 70%; background: #000; border: 2px solid #28a745; border-radius: 10px; display: flex; justify-content: center; align-items: center; }
+        .user-video { position: absolute; bottom: 20px; right: 20px; width: 200px; height: 150px; background: #444; border: 2px solid white; border-radius: 10px; }
+        .controls { height: 80px; background: #333; display: flex; justify-content: center; align-items: center; gap: 20px; }
+        .control-btn { padding: 10px 20px; border-radius: 50px; border: none; cursor: pointer; font-weight: bold; }
+        .end-btn { background: #ff4444; color: white; }
+    </style>
+</head>
+<body>
+
+    <div class="video-header">
+        <span>Live Session: English Intermediate</span>
+        <span style="color: #28a745;">● Live 00:12:45</span>
+    </div>
+
+    <div class="main-stage">
+        <div class="tutor-video">
+            <h3>Tutor Video Feed (Sarah)</h3>
+        </div>
+        <div class="user-video">
+            <p style="text-align: center; margin-top: 50px; font-size: 0.8rem;">You (Camera Off)</p>
+        </div>
+    </div>
+
+    <div class="controls">
+        <button class="control-btn">Mute</button>
+        <button class="control-btn">Stop Video</button>
+        <button class="control-btn">Share Screen</button>
+        <button class="control-btn end-btn" onclick="window.location.href='index.html'">End Call</button>
+    </div>
+
+</body>
+</html>

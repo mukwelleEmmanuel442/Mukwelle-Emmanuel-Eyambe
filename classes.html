@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn English Online - Levels & Tutoring</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f9f9f9;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        h1 { color: #333; margin-bottom: 10px; }
+        .subtitle { color: #666; margin-bottom: 40px; }
+
+        .levels-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .level-card {
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            width: 240px;
+            padding: 30px 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .level-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            border-color: #007bff;
+        }
+
+        /* Special Styling for the Tutor Box */
+        .tutor-card {
+            border-color: #28a745; /* Green border */
+            background-color: #f0fff4; /* Light green tint */
+        }
+        
+        .tutor-card:hover {
+            border-color: #218838;
+        }
+
+        .icon {
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+
+        .level-card h3 {
+            margin: 10px 0;
+            color: #007bff;
+            font-size: 1.3rem;
+        }
+
+        .tutor-card h3 {
+            color: #28a745;
+        }
+
+        .level-card p {
+            font-size: 0.9rem;
+            color: #555;
+            line-height: 1.4;
+            flex-grow: 1; /* Keeps buttons aligned */
+        }
+
+        .btn {
+            margin-top: 20px;
+            background: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            width: 80%;
+        }
+
+        .tutor-btn {
+            background: #28a745;
+        }
+
+        .back-home {
+            margin-top: 50px;
+            display: inline-block;
+            color: #666;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>English Learning Center</h1>
+    <p class="subtitle">Select your level to study or book a 1-on-1 session with a professional tutor.</p>
+
+    <div class="levels-container">
+
+        <a href="beginner.html" class="level-card">
+            <div class="icon">🌱</div>
+            <h3>Beginner</h3>
+            <p>Start with the basics: ABCs, simple greetings, and essential verbs.</p>
+            <div class="btn">Start Here</div>
+        </a>
+
+        <a href="elementary.html" class="level-card">
+            <div class="icon">🌿</div>
+            <h3>Elementary</h3>
+            <p>Build basic sentences and improve your everyday vocabulary.</p>
+            <div class="btn">Go to Level</div>
+        </a>
+
+        <a href="intermediate.html" class="level-card">
+            <div class="icon">🌳</div>
+            <h3>Intermediate</h3>
+            <p>Master complex grammar and hold fluent conversations.</p>
+            <div class="btn">Go to Level</div>
+        </a>
+
+        <a href="advanced.html" class="level-card">
+            <div class="icon">🏆</div>
+            <h3>Advanced</h3>
+            <p>Refine your accent, business English, and advanced writing skills.</p>
+            <div class="btn">Go to Level</div>
+        </a>
+
+        <a href="booking.html" class="level-card tutor-card">
+            <div class="icon">👨‍🏫</div>
+            <h3>Book a Tutor</h3>
+            <p>Need extra help? Schedule a private 1-on-1 Zoom or Skype session.</p>
+            <div class="btn tutor-btn">Book Now</div>
+        </a>
+
+    </div>
+
+    <br>
+    <a href="index.html" class="back-home">← Back to Main Menu</a>
+
+</body>
+</html>

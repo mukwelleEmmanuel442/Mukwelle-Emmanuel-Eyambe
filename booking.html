@@ -1,0 +1,86 @@
+<style>
+    /* This section handles the image resizing and layout */
+    .tutor-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 25px;
+        padding: 20px;
+    }
+
+    .tutor-card {
+        background: white;
+        padding: 25px;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        text-align: center;
+        border: 2px solid #28a745;
+    }
+
+    /* RESIZING FIX: Forces the 2001px image into a 150px circle */
+    .tutor-card img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%; /* Makes it a circle */
+        object-fit: cover;  /* Keeps the face centered without stretching */
+        margin-bottom: 15px;
+        border: 3px solid #28a745;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .price-tag {
+        font-size: 1.4rem;
+        color: #28a745;
+        font-weight: bold;
+        margin: 10px 0;
+    }
+
+    .specialty {
+        font-style: italic;
+        color: #666;
+        margin-bottom: 15px;
+    }
+
+    .submit-btn {
+        background-color: #28a745;
+        color: white;
+        border-radius: 8px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .submit-btn:hover {
+        background-color: #218838;
+    }
+</style>
+
+<div class="tutor-grid">
+    <div class="tutor-card">
+        <img src="tutor1.jpg" alt="Tutor Emmanuel">
+        <h3><a href="schedule.html" style="color: #28a745; text-decoration: underline;">Emmanuel</a></h3>
+        <p class="specialty">IELTS & Exam Prep Specialist</p>
+        <div class="price-tag">300 Thai bath/ Hour</div>
+        <p>Helping students achieve Band 7+ for over 5 years.</p>
+        <a href="schedule.html" class="submit-btn" style="text-decoration: none; display: inline-block; width: auto; padding: 10px 20px;">Book Now</a>
+    </div>
+
+    <div class="tutor-card">
+        <img src="tutor2.jpg" alt="Tutor Mark">
+        <h3><a href="schedule.html" style="color: #28a745; text-decoration: underline;">Mark Thompson</a></h3>
+        <p class="specialty">Conversational & Business English</p>
+        <div class="price-tag">$30 / Hour</div>
+        <p>Improve your fluency for meetings and travel.</p>
+        <a href="schedule.html" class="submit-btn" style="text-decoration: none; display: inline-block; width: auto; padding: 10px 20px;">Book Now</a>
+    </div>
+
+    <div class="tutor-card">
+        <img src="tutor3.jpg" alt="Tutor Elena">
+        <h3><a href="schedule.html" style="color: #28a745; text-decoration: underline;">Elena Rodriguez</a></h3>
+        <p class="specialty">Beginner & Kids English</p>
+        <div class="price-tag">$20 / Hour</div>
+        <p>Patient and fun lessons for starting your journey.</p>
+        <a href="schedule.html" class="submit-btn" style="text-decoration: none; display: inline-block; width: auto; padding: 10px 20px;">Book Now</a>
+    </div>
+</div>
+

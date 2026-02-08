@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photos for Sale - English Made Simple</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #1a1a1a; /* Dark theme for photography */
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 40px auto;
+        }
+
+        .photo-card {
+            background: #2a2a2a;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s;
+            border: 1px solid #444;
+        }
+
+        .photo-card:hover {
+            transform: scale(1.03);
+        }
+
+        .photo-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .photo-info {
+            padding: 15px;
+        }
+
+        .price-tag {
+            color: #ffcc00;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .buy-btn {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: bold;
+        }
+
+        .buy-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .back-link {
+            color: #aaa;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Photography Gallery</h1>
+    <p>High-resolution digital downloads for your projects.</p>
+
+    <div class="photo-grid">
+        
+        <div class="photo-card">
+            <img src="photo-sample.jpg" alt="Nature Landscape">
+            <div class="photo-info">
+                <h3>Golden Hour Landscape</h3>
+                <div class="price-tag">$5.00</div>
+                <a href="#" class="buy-btn">Buy Digital Copy</a>
+            </div>
+        </div>
+
+        <div class="photo-card">
+            <img src="city-scape.jpg" alt="City View">
+            <div class="photo-info">
+                <h3>Midnight City Lights</h3>
+                <div class="price-tag">$5.00</div>
+                <a href="#" class="buy-btn">Buy Digital Copy</a>
+            </div>
+        </div>
+
+        <div class="photo-card">
+            <img src="portrait.jpg" alt="Portrait">
+            <div class="photo-info">
+                <h3>Studio Portrait</h3>
+                <div class="price-tag">$52.10</div>
+                <a href="#" class="buy-btn">Buy Digital Copy</a>
+            </div>
+        </div>
+
+    </div>
+
+    <a href="index.html" class="back-link">← Return to Homepage</a>
+
+</body>
+</html>
+
+

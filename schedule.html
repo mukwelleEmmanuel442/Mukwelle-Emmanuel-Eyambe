@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Booking & Payment</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background-color: #f0fff4; padding: 40px; display: flex; justify-content: center; }
+        .schedule-container { background: white; padding: 40px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); max-width: 500px; width: 100%; border: 2px solid #06C755; }
+        h2 { color: #06C755; text-align: center; margin-top: 0; }
+        .form-group { margin-bottom: 20px; }
+        label { display: block; font-weight: bold; margin-bottom: 8px; }
+        input, select, textarea { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box; }
+        .pay-btn { width: 100%; background-color: #007bff; color: white; border: none; padding: 15px; font-size: 1.2rem; font-weight: bold; border-radius: 8px; cursor: pointer; transition: 0.3s; }
+        .pay-btn:hover { background-color: #0056b3; }
+        .modal { display: none; position: fixed; z-index: 100; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.6); }
+        .modal-content { background-color: white; margin: 10% auto; padding: 30px; border-radius: 15px; width: 350px; text-align: center; border: 2px solid #007bff; position: relative; }
+        .confirm-pay-btn { background-color: #28a745; color: white; width: 100%; padding: 12px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; margin-top: 20px; font-size: 1rem; }
+    </style>
+</head>
+<body>
+
+<div class="schedule-container">
+    <h2>🗓️ Book & Verify</h2>
+    <form id="bookingForm">
+        <div class="form-group">
+            <label>Choose Your Tutor</label>
+            <select id="tutorSelect" required>
+                <option value="emmanuel">Tutor Emmanuel</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Your Full Name</label>
+            <input type="text" id="studentName" required>
+        </div>
+        <div class="form-group">
+            <label>Study Date & Time</label>
+            <input type="datetime-local" id="classTime" required>
+        </div>
+        <button type="submit" class="pay-btn">Proceed to Payment</button>
+    </form>
+</div>
+
+<div id="paymentModal" class="modal">
+    <div class="modal-content">
+        <h3>💳 Secure Payment</h3>
+        <p>Total Amount: 300 THB</p>
+        <button class="confirm-pay-btn" onclick="processPayment()">Confirm & Notify Tutor</button>
+    </div>
+</div>
+
+<script>
+    const bookingForm = document.getElementById('bookingForm');
+    const paymentModal = document.getElementById('paymentModal');
+
+    bookingForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        paymentModal.style.display = "block";
+    });
+
+    async function processPayment() {
+        try {
+            const name = document.getElementById('studentName').value;
+            const time = document.getElementById('classTime').value;
+            const tutorDropdown = document.getElementById('tutorSelect');
+            const selectedTutorName = tutorDropdown.options[tutorDropdown.selectedIndex].text;
+
+            // --- CHECK LINE BELOW FOR FORMSPREE (xdalojvp) ---
+            await fetch('https://formspree.io/f/xdalojvp', {
+                method: 'POST',
+                body: JSON.stringify({ tutor: selectedTutorName, student: name, time: time }),
+                headers: { 'Content-Type': 'application/json' }
+            });
+
+            const message = `✅ PAID BOOKING VERIFIED\nStudent: ${name}\nTime: ${time}`;
+            
+            // --- CHECK LINE BELOW FOR LINE ID (teacherwhite1) ---
+            const lineUrl = `https://line.me/ti/p/~teacherwhite1?text=${encodeURIComponent(message)}`;
+
+            window.open(lineUrl, '_blank');
+            alert("Sent! Opening LINE...");
+            window.location.href = 'room.html';
+
+        } catch (err) {
+            alert("Error: Please check your connection.");
+        }
+    }
+</script>
+</body>
+</html>
